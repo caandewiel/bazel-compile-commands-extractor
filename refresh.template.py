@@ -60,7 +60,7 @@ _print_header_finding_warning_once.has_logged = False
 def _get_bazel_cached_action_keys():
     """Gets the set of actionKeys cached in bazel-out."""
     action_cache_process = subprocess.run(
-        ['bazel', 'dump', '--action_cache'],
+        ['.linters/bazel', 'dump', '--action_cache'],
         capture_output=True,
         encoding=locale.getpreferredencoding(),
         check=True, # Should always succeed.
